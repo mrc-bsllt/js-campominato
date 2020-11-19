@@ -46,17 +46,13 @@ for (var i = 0; i < 16; i++) {
 console.log(arrayBombs);
 // devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
 for (var i = 0; i < 5; i++) {
-  var userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero"))
-  var checkUserNumber = isThereAlreadyThisNumber(arrayUser, userNumber);
-  if (checkUserNumber == true) {
-    alert("hai inserito un numero doppio");
-    userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero"))
-    i--;
-  } else {
-    arrayUser.push(userNumber);
+  var userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
+  if ((isNaN(userNumber)) || ((userNumber < 1) || (userNumber > 100))) {
+    alert("Errore!");
+    userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
   }
+  var checkUserNumber = isThereAlreadyThisNumber(arrayUser, userNumber);
 }
-console.log(arrayUser);
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
