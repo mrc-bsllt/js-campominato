@@ -22,21 +22,25 @@ function checkArray (array, number) {
 }
 // ----------------------------funzioni
 
+var bombs = document.getElementById("bombs");
+var userNumbers = document.getElementById("user_numbers");
 
 
 // creo un Array che dovà contenere dei numeri, ovvero le bombe
 var arrayBombs = [];
-var userNumbers = [];
 
 // devo generare 16 numeri random dal computer, ovvero le bombe
 // inserisco i 16 numeri random generati all'interno dell'Array
-// for (var i = 0; i < 16; i++) {
-//   arrayBombs.push(randomNUmber(1, 100));
-// }
-// devo chiedere all'utente di inserire per 16 volte un numero tra 1 e 100
-// for (var i = 0; i < 5; i++) {
-//   userNumbers.push(parseInt(prompt("Inserisci il " + (i+1) + "°" + " numero")));
-// }
+for (var i = 0; i < 16; i++) {
+  arrayBombs.push(randomNUmber(1, 100));
+  bombs.innerHTML += arrayBombs[i] + " - ";
+}
+
+// devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
+for (var i = 0; i < 5; i++) {
+  var userInput = parseInt(prompt("Inserisci il " + (i+1) + "°" + " numero"));
+  userNumbers.innerHTML += userInput + " - ";
+}
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
