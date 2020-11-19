@@ -10,6 +10,7 @@
 function randomNUmber (min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
+
 function isThereAlreadyThisNumber (array, number) {
   var result = false;
   for (var i = 0; i < array.length; i++) {
@@ -28,16 +29,15 @@ var userNumbers = document.getElementById("user_numbers");
 
 // creo un Array che dovà contenere dei numeri, ovvero le bombe
 var arrayBombs = [];
+var arrayUser = [];
 
 // devo generare 16 numeri random DIVERSI dal computer, ovvero le bombe
 // inserisco i 16 numeri random generati all'interno dell'Array
 
 for (var i = 0; i < 16; i++) {
   var pcNumber = randomNUmber(1, 100);
-  console.log(pcNumber);
-  var checkNumber = isThereAlreadyThisNumber(arrayBombs, pcNumber);
-  console.log(checkNumber);
-  if (checkNumber == true) {
+  var checkPcNumber = isThereAlreadyThisNumber(arrayBombs, pcNumber);
+  if (checkPcNumber == true) {
     i--;
   } else {
     arrayBombs.push(pcNumber);
@@ -45,6 +45,18 @@ for (var i = 0; i < 16; i++) {
 }
 console.log(arrayBombs);
 // devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
+for (var i = 0; i < 5; i++) {
+  var userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero"))
+  var checkUserNumber = isThereAlreadyThisNumber(arrayUser, userNumber);
+  if (checkUserNumber == true) {
+    alert("hai inserito un numero doppio");
+    userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero"))
+    i--;
+  } else {
+    arrayUser.push(userNumber);
+  }
+}
+console.log(arrayUser);
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
