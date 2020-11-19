@@ -11,6 +11,14 @@ function randomNUmber (min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
 
+function isThereAlreadyThisNumber (num1, num2) {
+  var j = false;
+  if (num1 == num2) {
+    return j = true;
+  }
+  return j;
+}
+
 function checkArray (array, number) {
   var result = false;
   for (var i = 0; i < array.length; i++) {
@@ -37,10 +45,6 @@ for (var i = 0; i < 16; i++) {
 }
 
 // devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
-for (var i = 0; i < 5; i++) {
-  var userInput = parseInt(prompt("Inserisci il " + (i+1) + "°" + " numero"));
-  userNumbers.innerHTML += userInput + " - ";
-}
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
