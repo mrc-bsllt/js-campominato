@@ -48,7 +48,7 @@ console.log(arrayBombs);
 var score = 0;
 for (var i = 0; i < 5; i++) {
   var userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
-  if ((isNaN(userNumber)) || ((userNumber < 1) || (userNumber > 100))) {
+  if ((isNaN(userNumber)) || ((userNumber < 1) || (userNumber > 100) || (isThereAlreadyThisNumber(arrayUser, userNumber)))) {
     alert("Errore!");
     userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
   }
@@ -57,6 +57,7 @@ for (var i = 0; i < 5; i++) {
     alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
     i = 5;
   } else {
+    arrayUser.push(userNumber);
     score++;
   }
 }
