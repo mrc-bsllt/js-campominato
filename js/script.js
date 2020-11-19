@@ -10,20 +10,33 @@
 function randomNUmber (min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
+
+function checkArray (array, number) {
+  var result = false;
+  for (var i = 0; i < array.length; i++) {
+    if (number == array[i]) {
+      return result = true;
+    }
+  }
+  return result;
+}
 // ----------------------------funzioni
 
 
 
 // creo un Array che dovà contenere dei numeri, ovvero le bombe
 var arrayBombs = [];
+var userNumbers = [];
 
 // devo generare 16 numeri random dal computer, ovvero le bombe
 // inserisco i 16 numeri random generati all'interno dell'Array
-for (var i = 0; i < 16; i++) {
-  arrayBombs.push(randomNUmber(1, 100));
-}
-console.log(arrayBombs);
+// for (var i = 0; i < 16; i++) {
+//   arrayBombs.push(randomNUmber(1, 100));
+// }
 // devo chiedere all'utente di inserire per 16 volte un numero tra 1 e 100
+// for (var i = 0; i < 5; i++) {
+//   userNumbers.push(parseInt(prompt("Inserisci il " + (i+1) + "°" + " numero")));
+// }
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
