@@ -29,9 +29,9 @@ var userNumbers = document.getElementById("user_numbers");
 var arrayBombs = [];
 var arrayUser = [];
 
-// genero 16 numeri casuali da 1 a 16 tutti diversi
+// genero 16 numeri casuali da 1 a 100 tutti diversi
 for (var i = 0; i < 16; i++) {
-  var pcNumber = randomNUmber(1, 16);
+  var pcNumber = randomNUmber(1, 100);
   var checkPcNumber = isThereAlreadyThisNumber(arrayBombs, pcNumber);
   if (checkPcNumber == true) {
     // se un numero viene duplicato non lo inserisco e decremento la i
@@ -58,10 +58,12 @@ for (var i = 0; i < 84; i++) {
   if (isAbomb) {
     // se è presente tra le bombe, HAI PERSO! e finisce il programma
     alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
+    userNumbers.innerHTML += "<li class='red'>" + userNumber + "</li>";
     i = 84;
   } else {
     // se il numero valido inserito non è neanche una bomba lo inserisco nell' Array dei numeri inseriti dall'utente
     arrayUser.push(userNumber);
+    userNumbers.innerHTML += "<li>" + userNumber + "</li>";
     score++;
   }
 }
