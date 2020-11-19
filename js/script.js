@@ -10,23 +10,19 @@
 function randomNUmber (min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
-console.log(randomNUmber(1, 100));
 // ----------------------------funzioni
 
 
 
 // creo un Array che dovà contenere dei numeri, ovvero le bombe
-var arraybombs = [];
+var arrayBombs = [];
 
-// creo una funzione che mi permetta di generare un numero casuale tra 1 e 100
-function randomNUmber (min, max) {
-  return Math.floor(Math.random() * (max - min +1) + min);
-}
-console.log(randomNUmber(1, 100));
 // devo generare 16 numeri random dal computer, ovvero le bombe
-
 // inserisco i 16 numeri random generati all'interno dell'Array
-
+for (var i = 0; i < 16; i++) {
+  arrayBombs.push(randomNUmber(1, 100));
+}
+console.log(arrayBombs);
 // devo chiedere all'utente di inserire per 16 volte un numero tra 1 e 100
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
