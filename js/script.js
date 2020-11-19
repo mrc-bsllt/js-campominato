@@ -46,7 +46,7 @@ for (var i = 0; i < 16; i++) {
 console.log(arrayBombs);
 // devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
 var score = 0;
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 84; i++) {
   var userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
   if ((isNaN(userNumber)) || ((userNumber < 1) || (userNumber > 100) || (isThereAlreadyThisNumber(arrayUser, userNumber)))) {
     alert("Errore!");
@@ -55,13 +55,15 @@ for (var i = 0; i < 5; i++) {
   var isAbomb = isThereAlreadyThisNumber(arrayBombs, userNumber);
   if (isAbomb) {
     alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
-    i = 5;
+    i = 84;
   } else {
     arrayUser.push(userNumber);
     score++;
   }
 }
-console.log(score);
+if (isAbomb == false) {
+  alert("COMPLIMENTI HAI VINTO!");
+}
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
 
 // se inserisce un numero già presente nell'Array ha perso e la partita termina
