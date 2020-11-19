@@ -10,16 +10,7 @@
 function randomNUmber (min, max) {
   return Math.floor(Math.random() * (max - min +1) + min);
 }
-
-function isThereAlreadyThisNumber (num1, num2) {
-  var j = false;
-  if (num1 == num2) {
-    return j = true;
-  }
-  return j;
-}
-
-function checkArray (array, number) {
+function isThereAlreadyThisNumber (array, number) {
   var result = false;
   for (var i = 0; i < array.length; i++) {
     if (number == array[i]) {
@@ -28,6 +19,7 @@ function checkArray (array, number) {
   }
   return result;
 }
+
 // ----------------------------funzioni
 
 var bombs = document.getElementById("bombs");
@@ -37,13 +29,21 @@ var userNumbers = document.getElementById("user_numbers");
 // creo un Array che dovà contenere dei numeri, ovvero le bombe
 var arrayBombs = [];
 
-// devo generare 16 numeri random dal computer, ovvero le bombe
+// devo generare 16 numeri random DIVERSI dal computer, ovvero le bombe
 // inserisco i 16 numeri random generati all'interno dell'Array
-for (var i = 0; i < 16; i++) {
-  arrayBombs.push(randomNUmber(1, 100));
-  bombs.innerHTML += arrayBombs[i] + " - ";
-}
 
+for (var i = 0; i < 16; i++) {
+  var pcNumber = randomNUmber(1, 100);
+  console.log(pcNumber);
+  var checkNumber = isThereAlreadyThisNumber(arrayBombs, pcNumber);
+  console.log(checkNumber);
+  if (checkNumber == true) {
+    i--;
+  } else {
+    arrayBombs.push(pcNumber);
+  }
+}
+console.log(arrayBombs);
 // devo chiedere all'utente di inserire per 84 volte un numero tra 1 e 100
 
 // devo assicurarmi che il numero inserita sia intero e non può inserire un numero doppio
