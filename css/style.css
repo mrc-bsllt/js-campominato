@@ -7,6 +7,15 @@ span {
 ul {
   list-style: none;
 }
+ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+ul li:first-child {
+  font-weight: 700;
+}
 .red {
   color: red;
+  font-weight: 700;
+  text-decoration: underline;
 }

@@ -75,8 +75,15 @@ button.addEventListener("click",
         // se è presente tra le bombe, HAI PERSO! e finisce il programma
         alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
         userNumbers.innerHTML += "<li class='red'>" + userNumber + "</li>";
-        bombs.className = "red";
-        bombs.innerHTML = userNumber;
+        for (var i = 0; i < arrayBombs.length; i++){
+          if (arrayBombs[i] == userNumber) {
+            bombs.innerHTML += "<li class='red'>" + arrayBombs[i] + "</li>";
+          } else {
+            bombs.innerHTML += "<li>" + arrayBombs[i] + "</li>";
+          }
+        }
+        // bombs.className = "red";
+        // bombs.innerHTML = userNumber;
         i = maxNumber - 16;
       } else {
         // se il numero valido inserito non è neanche una bomba lo inserisco nell' Array dei numeri inseriti dall'utente
