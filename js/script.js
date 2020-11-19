@@ -59,6 +59,8 @@ for (var i = 0; i < 84; i++) {
     // se è presente tra le bombe, HAI PERSO! e finisce il programma
     alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
     userNumbers.innerHTML += "<li class='red'>" + userNumber + "</li>";
+    bombs.className = "red";
+    bombs.innerHTML = userNumber;
     i = 84;
   } else {
     // se il numero valido inserito non è neanche una bomba lo inserisco nell' Array dei numeri inseriti dall'utente
