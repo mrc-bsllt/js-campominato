@@ -25,6 +25,7 @@ var difficult = document.getElementById("difficult");
 var button = document.getElementById("button");
 var bombs = document.getElementById("bombs");
 var userNumbers = document.getElementById("user_numbers");
+var scoreNumber = document.getElementById("score_number");
 var arrayBombs = [];
 var arrayUser = [];
 
@@ -84,6 +85,7 @@ button.addEventListener("click",
         }
         // bombs.className = "red";
         // bombs.innerHTML = userNumber;
+        scoreNumber.innerHTML = score;
         i = maxNumber - 16;
       } else {
         // se il numero valido inserito non è neanche una bomba lo inserisco nell' Array dei numeri inseriti dall'utente
@@ -95,6 +97,7 @@ button.addEventListener("click",
     // se l'utente è stato così fortunato da non beccare mai un numero bomba, HAI VINTO!
     if (isAbomb == false) {
       alert("COMPLIMENTI HAI VINTO!");
+      scoreNumber.innerHTML = score;
     }
   }
 );

@@ -19,3 +19,7 @@ ul li:first-child {
   font-weight: 700;
   text-decoration: underline;
 }
+#score_number {
+  font-weight: 700;
+  font-size: 25px;
+}
