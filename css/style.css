@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
+body {
+  background-color: rgba(18, 40, 99, 0.82);
+}
 
 /* utilities */
 .hidden {
@@ -31,6 +34,9 @@
    width: 150px;
    color: #ada842;
 }
+.btn:focus {
+  outline: none;
+}
 /* /utilities */
 
 /* header */
@@ -46,6 +52,26 @@ header {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+select {
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-align-last: center;
+  border-width: 2px;
+  border-color: #b4cf06;
+  cursor: pointer;
+}
+select:focus {
+  outline: none;
+  border-radius: 20px 20px 0 0;
+  border-bottom: none;
+}
+select option {
+  background-color: #12120f;
 }
 /* /header */
 
