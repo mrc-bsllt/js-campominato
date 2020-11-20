@@ -21,6 +21,8 @@ function isThereAlreadyThisNumber (array, number) {
 
 // ----------------------------funzioni
 
+var start = document.getElementById("start");
+var selectSection = document.getElementById("select_section");
 var difficult = document.getElementById("difficult");
 var button = document.getElementById("button");
 var bombs = document.getElementById("bombs");
@@ -28,6 +30,13 @@ var userNumbers = document.getElementById("user_numbers");
 var scoreNumber = document.getElementById("score_number");
 var arrayBombs = [];
 var arrayUser = [];
+
+start.addEventListener("click",
+  function() {
+    start.className = "hidden";
+    selectSection.className = "show";
+  }
+);
 
 button.addEventListener("click",
   function() {
@@ -68,7 +77,7 @@ button.addEventListener("click",
       // se il numero inserito non è un numero, non è compreso da 1 a 10 e non è già stato inserito, errore!
       while ((isNaN(userNumber)) || ((userNumber < 1) || (userNumber > maxNumber) || (isThereAlreadyThisNumber(arrayUser, userNumber)))) {
         alert("Errore!");
-        userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a 100"));
+        userNumber = parseInt(prompt("inserisci il " + (i+1) + "°" + " numero da 1 a " + maxNumber));
       }
       // controllo che il numero valido inserito non sia presente tra le bombe
       var isAbomb = isThereAlreadyThisNumber(arrayBombs, userNumber);
@@ -83,9 +92,6 @@ button.addEventListener("click",
             bombs.innerHTML += "<li>" + arrayBombs[i] + "</li>";
           }
         }
-        // bombs.className = "red";
-        // bombs.innerHTML = userNumber;
-        scoreNumber.innerHTML = score;
         i = maxNumber - 16;
       } else {
         // se il numero valido inserito non è neanche una bomba lo inserisco nell' Array dei numeri inseriti dall'utente
@@ -97,7 +103,7 @@ button.addEventListener("click",
     // se l'utente è stato così fortunato da non beccare mai un numero bomba, HAI VINTO!
     if (isAbomb == false) {
       alert("COMPLIMENTI HAI VINTO!");
-      scoreNumber.innerHTML = score;
     }
+    scoreNumber.innerHTML = score;
   }
 );
