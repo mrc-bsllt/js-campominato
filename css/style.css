@@ -9,6 +9,10 @@
 body {
   background-color: rgba(14, 21, 38, 0.82);
 }
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
 ul {
   list-style: none;
 }
