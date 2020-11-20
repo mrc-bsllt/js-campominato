@@ -2,18 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* utilities */
 .hidden {
   display: none;
-
 }
 .show {
   animation-name: show;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
+}
+.btn {
+  padding: 10px 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: transparent;
+  color: #303de0;
+  border-color: #2bdb1b;
+  border-radius: 25px;
+  transition: width 2s linear 0s;
+}
+.btn:hover {
+   width: 300px;
 }
 /* /utilities */
 

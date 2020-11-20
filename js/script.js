@@ -33,8 +33,9 @@ var arrayUser = [];
 
 start.addEventListener("click",
   function() {
-    start.className = "hidden";
-    selectSection.className = "show";
+    start.classList.add("hidden");
+    selectSection.classList.remove("hidden");
+    selectSection.classList.add("show");
   }
 );
 
