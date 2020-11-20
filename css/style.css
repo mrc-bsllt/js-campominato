@@ -4,9 +4,15 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
+
+/* generale */
 body {
   background-color: rgba(14, 21, 38, 0.82);
 }
+ul {
+  list-style: none;
+}
+/* /generale */
 
 /* utilities */
 .hidden {
@@ -73,7 +79,6 @@ select {
 select:focus {
   outline: none;
   border-radius: 20px 20px 0 0;
-  border-bottom: none;
 }
 select option {
   background-color: #12120f;
@@ -85,7 +90,6 @@ select option {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  list-style: none;
 }
 #bombs li {
   width: 80px;
@@ -94,13 +98,17 @@ select option {
   line-height: 80px;
   background-color: grey;
 }
-ul li:first-child {
-  font-weight: 700;
-}
 .bombs_block {
   width: 20%;
   margin: auto;
   background-color: red;
+}
+#user_numbers {
+  display: flex;
+  justify-content: center;
+}
+#user_numbers li {
+  padding: 0 20px;
 }
 /* /main */
 
