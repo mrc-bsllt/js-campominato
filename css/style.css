@@ -37,6 +37,11 @@ body {
 .btn:focus {
   outline: none;
 }
+.red {
+  color: red;
+  font-weight: 700;
+  text-decoration: underline;
+}
 /* /utilities */
 
 /* header */
@@ -75,13 +80,7 @@ select option {
 }
 /* /header */
 
-
-p {
-  font-weight: bold;
-}
-span {
-  font-weight: 400;
-}
+/* main */
 #bombs {
   display: flex;
   justify-content: space-between;
@@ -98,22 +97,23 @@ span {
 ul li:first-child {
   font-weight: 700;
 }
-.red {
-  color: red;
-  font-weight: 700;
-  text-decoration: underline;
-}
-#score_number {
-  font-weight: 700;
-  font-size: 25px;
-}
 .bombs_block {
   width: 20%;
   margin: auto;
   background-color: red;
 }
+/* /main */
 
-
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #12120f;
+  color: #ada842;
+}
 /* ANIMAZIONI */
 @keyframes show {
   0% {
