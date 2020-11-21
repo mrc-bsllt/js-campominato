@@ -7,9 +7,10 @@
 
 /* generale */
 body {
-  background-color: rgba(14, 21, 38, 0.82);
+  background-color: rgba(16, 18, 20, 0.9);
 }
 h2 {
+  color: #ada842;
   text-align: center;
   text-transform: uppercase;
 }
@@ -25,6 +26,12 @@ ul {
 .show {
   animation-name: show;
   animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+.show_slow {
+  animation-name: show_slow;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -47,10 +54,32 @@ ul {
 .btn:focus {
   outline: none;
 }
-.red {
-  color: red;
+.all_right {
+  margin-left: 100%;
+}
+.right_to_center {
+  animation-name: right_to_center;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+.all_left {
+  margin-right: 91%;
+  opacity: 0;
+}
+.left_to_center {
+  animation-name: left_to_center;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+.match {
+  animation-name: match;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   font-weight: 700;
-  text-decoration: underline;
 }
 /* /utilities */
 
@@ -90,29 +119,50 @@ select option {
 /* /header */
 
 /* main */
+main {
+  overflow-x: hidden;
+}
+#bombs_block {
+  width: 20%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 #bombs {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 #bombs li {
   width: 80px;
   height: 80px;
   margin: 15px 0;
-  line-height: 80px;
-  background-color: grey;
-}
-.bombs_block {
-  width: 20%;
-  margin: auto;
-  background-color: red;
+  line-height: 76px;
+  text-align: center;
+  background-color: #000000;
+  border: 2px solid #303de0;
+  border-radius: 50%;
+  color: #ada842;
+  font-weight: 700;
+  font-size: 25px;
 }
 #user_numbers {
   display: flex;
   justify-content: center;
 }
+#user_block h2 {
+  margin-bottom: 20px;
+}
 #user_numbers li {
-  padding: 0 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  margin: 0 15px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
 }
 /* /main */
 
@@ -122,9 +172,16 @@ footer {
   left: 0;
   width: 100%;
   height: 50px;
+  padding: 0 20px;
   line-height: 50px;
   background-color: #12120f;
   color: #ada842;
+}
+#score_number {
+  margin-left: 10px;
+  font-size: 25px;
+  color: #2bdb1b;
+  vertical-align: middle;
 }
 /* ANIMAZIONI */
 @keyframes show {
@@ -133,5 +190,43 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes show_slow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes right_to_center {
+  0% {
+    margin-left: 100%;
+    transform: translatex(0);
+  }
+  100% {
+    margin-left: 50%;
+    transform: translatex(-50%);
+  }
+}
+@keyframes left_to_center {
+  0% {
+    margin-right: 91%;
+    transform: translatex(0);
+    opacity: 0;
+  }
+  100% {
+    margin-right: 50%;
+    transform: translatex(50%);
+    opacity: 1;
+  }
+}
+@keyframes match {
+  0% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: #ff0000;
   }
 }

@@ -25,8 +25,11 @@ var start = document.getElementById("start");
 var selectSection = document.getElementById("select_section");
 var difficult = document.getElementById("difficult");
 var button = document.getElementById("button");
+var bombsBlock = document.getElementById("bombs_block");
 var bombs = document.getElementById("bombs");
+var userBlock = document.getElementById("user_block");
 var userNumbers = document.getElementById("user_numbers");
+var footer = document.getElementById("footer");
 var scoreNumber = document.getElementById("score_number");
 var arrayBombs = [];
 var arrayUser = [];
@@ -56,6 +59,11 @@ button.addEventListener("click",
         maxNumber = 50;
         break;
     }
+
+    bombsBlock.className = "right_to_center";
+    userBlock.className = "left_to_center";
+    footer.className = "show_slow";
+
     // genero 16 numeri casuali da 1 a maxNumber tutti diversi
     for (var i = 0; i < 16; i++) {
       var pcNumber = randomNUmber(1, maxNumber);
@@ -85,10 +93,10 @@ button.addEventListener("click",
       if (isAbomb) {
         // se è presente tra le bombe, HAI PERSO! e finisce il programma
         alert("Hai perso! il numero: " + userNumber + " è una BOMBA!");
-        userNumbers.innerHTML += "<li class='red'>" + userNumber + "</li>";
+        userNumbers.innerHTML += "<li class='match'>" + userNumber + "</li>";
         for (var i = 0; i < arrayBombs.length; i++){
           if (arrayBombs[i] == userNumber) {
-            bombs.innerHTML += "<li class='red'>" + arrayBombs[i] + "</li>";
+            bombs.innerHTML += "<li class='match'>" + arrayBombs[i] + "</li>";
           } else {
             bombs.innerHTML += "<li>" + arrayBombs[i] + "</li>";
           }
